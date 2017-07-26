@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Track Your Shipment</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="button_login">Get Access Token</string>
+    <string name="message_welcom">Welcome...here you can track your shipment shipped with DHL eCommerce.</string>
+    <string name="label_public_track">Save the extra steps of logging in and start tracking....!</string>
+    <string name="label_enter_shipmentId">Enter your Shipment ID :</string>
+    <string name="input_shipmentID">{enter up to 5 shipment IDs here}</string>
+    <string name="button_tracknow">Track Now!</string>
+    <string name="label_client_id">Client Id</string>
+    <string name="label_password">Password</string>
+    <string name="input_client_id">LTExMTgwNTI4MTY=</string>
+    <string name="input_password">APITest1</string>
+</resources>
