@@ -19,6 +19,8 @@ import javax.net.ssl.HttpsURLConnection;
  */
 
 class UtilityImpl extends Utility{
+    public Boolean isTokenValid;
+
     @Override
     public String trackMyShipmentNow(String[] shipmentIDs, String accessToken) {
         JSONObject msgRoot=new JSONObject();
@@ -30,9 +32,9 @@ class UtilityImpl extends Utility{
 
         JSONArray jArr=new JSONArray();
 
-        shipmentIDs[0]="SHIP1";
-        shipmentIDs[1]="SHIP2";
-        shipmentIDs[2]="SHIP3";
+//        shipmentIDs[0]="SHIP1";
+//        shipmentIDs[1]="SHIP2";
+//        shipmentIDs[2]="SHIP3";
 
 
 
@@ -78,6 +80,7 @@ class UtilityImpl extends Utility{
         HttpsURLConnection httpsConn=null;
         String input="test";
         StringBuilder sb=new StringBuilder();
+        isTokenValid=false;
         try {
             URL url=new URL("https://sandbox.dhlecommerce.asia/rest/v1/OAuth/AccessToken?clientId=" + clientId + "&password=" + password + "&returnFormat=json");
 
@@ -125,10 +128,12 @@ class UtilityImpl extends Utility{
 
                 JSONObject root=(JSONObject) jsonObj.get("accessTokenResponse");
                 token=root.getString("token");
+                isTokenValid=true;
             }
             catch (JSONException ex)
             {
-                    token=ex.getMessage();
+                    token="";
+                    isTokenValid=false;
             }
 
            // JsonReader jsonRead=new JsonReader();
